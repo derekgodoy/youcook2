@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-navbar color="purples">
+
+  <button ion-button menuToggle>
+    <ion-icon  name="menu"></ion-icon>
+  </button>
+  <ion-title>Bem-vindo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <figure text-center>
+    <img width="200" heigth="62" class="bgimg" src="https://i.imgur.com/xg6Mzd6.png">
+    </figure>
+    
+  <ion-avatar>
+      <img src="https://i.imgur.com/LY3hwOa.jpg">
+    </ion-avatar>
+      <ion-card color="purples">
+          <ion-card-content >
+              <ul>
+                  <li>Refeições exclusivas entregues semanalmente</li>
+                  <li>Receitas simples e rápidas</li>
+                  <li>Ingredientes frescos em quantidades exatas</li>
+                  <li>Entregas agendadas por você</li>
+              </ul>
+          </ion-card-content>
+        </ion-card>
+        <div text-center *ngIf="informacoes?.tipoPlano==''">
+          <button ion-button large color="purples" clear (click)="planos()">Escolha seu plano</button>
+        </div>
+        <div text-center *ngIf="informacoes?.tipoPlano!=''">
+         <button ion-button large color="purples" clear (click)="receitas()">Ver receitas</button>
+       </div>
+
+  </ion-content>

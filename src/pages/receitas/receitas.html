@@ -1,0 +1,93 @@
+
+<ion-header>
+  <ion-navbar color="purples">
+
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Receitas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content> 
+<div padding>
+    <ion-segment color="purples" [(ngModel)]="receitas">
+      <ion-segment-button value="basico">
+        Básico
+      </ion-segment-button>
+      <ion-segment-button value="premium">
+        Premium
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="receitas">
+
+    <ion-list *ngSwitchCase="'basico'">
+
+
+
+        <ion-card *ngFor="let r of listaReceitaBasico" (click)="prato(r?.uid)">
+            <img src="{{r?.img}}"/>
+            <ion-card-content>
+              <ion-card-title color="purples">
+               {{r?.nome}}
+                </ion-card-title>
+              <p text-justify>
+                {{r?.descricao}}
+              </p>
+              <ion-row>
+                <ion-col text-center>
+                  Dificuldade: {{r?.dificuldade}}
+                </ion-col>
+                <ion-col text-center>
+                  Preparo: {{r?.preparo}}.
+                </ion-col>
+              </ion-row>
+      
+              <ion-row justify-content-center margin-top>
+              <button ion-button icon-start color="purples" (click)="prato(r?.uid)">
+                Ver mais
+              </button>
+            </ion-row>
+            </ion-card-content>
+        </ion-card> 
+
+
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'premium'">
+
+
+        <ion-card *ngFor="let r of listaReceitaPremium" (click)="prato(r?.uid)">
+            <img src="{{r?.img}}"/>
+            <ion-card-content>
+              <ion-card-title color="purples">
+               {{r?.nome}}
+                </ion-card-title>
+              <p text-justify>
+                {{r?.descricao}}
+              </p>
+              <ion-row>
+                <ion-col text-center>
+                  Dificuldade: {{r?.dificuldade}}
+                </ion-col>
+                <ion-col text-center>
+                  Preparo: {{r?.preparo}}.
+                </ion-col>
+              </ion-row>
+      
+              <ion-row justify-content-center margin-top>
+              <button ion-button icon-start color="purples" (click)="prato(r?.uid)">
+                Ver mais
+              </button>
+            </ion-row>
+            </ion-card-content>
+        </ion-card> 
+        
+    </ion-list>
+  </div>
+
+      </ion-content>

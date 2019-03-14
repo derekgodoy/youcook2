@@ -1,0 +1,93 @@
+<ion-header>
+
+  <ion-navbar color="purples">
+    <ion-title>Meu Perfil</ion-title>
+    <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row align-items-center>
+    <ion-col col-4 text-right>
+      <img src='https://myduolife.com/images/img-profile.png' alt="">
+    </ion-col>
+    <ion-col>
+      <h2 margin-vertical>{{informacoes?.nome}}</h2>
+      <h4 margin-vertical>Plano selecionado: {{informacoes?.tipoPlano}}</h4>
+  
+    </ion-col>
+  </ion-row>
+  
+  <ion-row justify-content-center>
+    <button ion-button color="purples" clear (click)="editar()">Editar perfil</button>
+    <button ion-button color="purples" clear (click)="planos()">Trocar plano</button>
+  </ion-row>
+
+  <ion-card>
+      <ion-card-header>
+        <h1 text-center>Dados cadastrais</h1>
+      </ion-card-header>
+      
+      <ion-card-content>
+
+        <ion-list>
+          <ion-item>E-mail: {{email}}</ion-item>
+          <ion-item>CPF: {{informacoes?.cpf}}</ion-item>
+          <ion-item>Nascimento: {{informacoes?.nasc}}</ion-item>
+          <ion-item>Telefone: {{informacoes?.telefone}}</ion-item>
+        </ion-list>
+
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+        <ion-card-header>
+          <h1 text-center>Preferências de Entrega</h1>
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <ion-list>
+                <ion-list-header>Endereço </ion-list-header>
+                <ion-item>Endereço: {{informacoes?.endereco}}</ion-item>
+                <ion-item>CEP: {{informacoes?.cep}}</ion-item>
+                
+
+                <ion-list-header>Próxima entrega</ion-list-header>
+                <ion-item>
+                    <ion-label color="dark">Horário</ion-label>
+                    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+                </ion-item>
+                  
+                <ion-item>
+                    <ion-label color="dark">Data</ion-label>
+                    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MMMM/YYYY" [(ngModel)]="event.month"></ion-datetime>
+                </ion-item>
+            </ion-list>
+
+        </ion-card-content>
+      </ion-card>
+
+
+ <ion-card>
+      <ion-card-header>
+        <h1 text-center>Pagamento</h1>
+      </ion-card-header>
+      
+      <ion-card-content> 
+
+        <ion-list>
+            <ion-item>Número do cartão: {{informacoes?.ncartao}}</ion-item>
+            <ion-item>Nome: {{informacoes?.nome}}</ion-item>
+            <ion-item>CVV: {{informacoes?.cvv}}</ion-item>
+            <ion-item>Vencimento: {{informacoes?.cartaovenc}}</ion-item> 
+          </ion-list> 
+
+
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

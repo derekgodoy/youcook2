@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar color="purples">
+    <ion-title>Editar Perfil</ion-title>
+    <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <form [formGroup]="formGroup" (ngSubmit)="editar()" >
+    <h6 class="teste">
+      Dados Cadastrais
+    </h6>
+
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" formControlName="nome" value="{{informacoes?.nome}}"></ion-input>
+    </ion-item>
+
+ 
+    <ion-item>
+      <ion-label floating>CPF</ion-label>
+      <ion-input type="text" formControlName="cpf" value="{{informacoes?.cpf}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Nascimento</ion-label>
+      <ion-input type="text" formControlName="nasc" value="{{informacoes?.nasc}}"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="text" formControlName="telefone" value="{{informacoes?.telefone}}"></ion-input>
+    </ion-item>
+
+    <h6 class="teste">
+      Endereço
+    </h6>
+  
+    <ion-item>
+      <ion-label floating>CEP</ion-label>
+      <ion-input type="text" formControlName="cep" value="{{informacoes?.cep}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Endereço</ion-label>
+      <ion-input type="text" formControlName="endereco" value="{{informacoes?.endereco}}"></ion-input>
+    </ion-item>
+
+    <h6 class="teste">
+      Pagamento
+    </h6>
+  
+    <ion-item>
+      <ion-label floating>Número do cartão</ion-label>
+      <ion-input type="text" formControlName="ncartao" value="{{informacoes?.ncartao}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Vencimento</ion-label>
+      <ion-input type="text" formControlName="cartaovenc" value="{{informacoes?.cartaovenc}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>CVV</ion-label>
+      <ion-input type="text" formControlName="cvv" value="{{informacoes?.cvv}}"></ion-input>
+    </ion-item>
+
+    <ion-row justofy-content-center>
+    <button ion-button color="purples" clear>Enviar</button>
+  </ion-row>
+
+  </form>
+  </ion-list>
+</ion-content>

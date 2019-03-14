@@ -1,0 +1,25 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content padding class="bgmassa">
+  <ion-scroll scrollbar-x="false" scrollbar-y="false" > </ion-scroll>
+  <figure text-center>
+      <ion-img width="250" height="250" class="bgimg" src="https://i.imgur.com/haLYGv1.png"></ion-img>
+      </figure>
+
+  <ion-list>
+    <ion-item margin-bottom class="bginput">
+      <ion-label>E-mail</ion-label>
+      <ion-input type="text"  #usuario></ion-input>
+    </ion-item>
+    <ion-item class="bginput">
+      <ion-label>Senha</ion-label>
+      <ion-input type="password" #senha></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block color="purples" margin-bottom margin-top (click)="login()">Entrar</button>
+  <button ion-button block outline color="purples" (click)="cadastro()">Criar conta</button>
+
+</ion-content>

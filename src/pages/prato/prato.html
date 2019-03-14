@@ -1,0 +1,53 @@
+
+<ion-header>
+  <ion-navbar color="purples">
+
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{prato?.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content> 
+
+        <ion-card>
+            <img src="{{prato?.img}}"/>
+            <ion-card-content>
+              <ion-card-title color="purples">
+                {{prato?.nome}}
+                </ion-card-title>
+              <p>
+                {{prato?.descricao}}
+              </p>
+              <ion-row>
+                <ion-col text-center>
+                  Dificuldade: {{prato?.dificuldade}}
+                </ion-col>
+                <ion-col text-center>
+                  Preparo: {{prato?.preparo}}
+                </ion-col>
+              </ion-row>
+      
+              <div text-center margin-top>
+                <h2 class="title"><b>INGREDIENTES</b></h2>
+              </div>
+
+              <ion-row class="teste" margin-top padding> <h2>
+                <span *ngFor="let i of prato?.ingredientes"> • <span class="title"><b>{{i?.nome}}</b></span>: {{i.qtd}}</span>
+              </h2></ion-row>
+              
+              <div text-center margin-top>
+                  <h2 class="title"><b>MODO DE PREPARO</b></h2>
+              </div>
+
+              <div margin-top *ngFor="let p of prato?.passos">
+                {{p}}
+              </div>
+            </ion-card-content>
+        </ion-card>
+
+    
+  </ion-content>
