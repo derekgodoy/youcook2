@@ -37,7 +37,8 @@ export class EditarPage {
       ncartao : ['', [Validators.required]],
       nome : ['', [Validators.required]],
       telefone : ['', [Validators.required]],
-      tipoPlano : ['', [Validators.required]]
+      tipoPlano : ['', [Validators.required]],
+      UID : [this.uid]
     }); 
   }
 
@@ -58,11 +59,22 @@ export class EditarPage {
 
   editar(){
 
-    this.firestore.collection("infoUser").doc(this.docID).update(
+    try{
+
+    this.firestore.collection("infoUser").doc(this.docID).set(
       this.formGroup.value
       ).then(() =>{
         this.navCtrl.setRoot("PerfilPage");
     });
+
+    }catch(e){
+
+      this.firestore.collection("infoUser").add(
+        this.formGroup.value
+        ).then(() =>{
+          this.navCtrl.setRoot("PerfilPage");
+      });     
+    }
   }
   
 }
